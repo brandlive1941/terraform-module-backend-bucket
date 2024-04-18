@@ -1,5 +1,5 @@
 {
-  "name": "terraform-module-backend-serverless",
+  "name": "terraform-module-backend-bucket",
   "version": "1.0.0",
   "description": "terraform module for cloudbuild to artifact registry",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brandlive1941/terraform-module-backend-serverless.git"
+    "url": "git+https://github.com/brandlive1941/terraform-module-backend-bucket.git"
   },
   "keywords": [
     "gcp",
@@ -20,9 +20,9 @@
   "author": "drew.mercer@brandlive.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brandlive1941/terraform-module-backend-serverless/issues"
+    "url": "https://github.com/brandlive1941/terraform-module-backend-bucket/issues"
   },
-  "homepage": "https://github.com/brandlive1941/terraform-module-backend-serverless#readme",
+  "homepage": "https://github.com/brandlive1941/terraform-module-backend-bucket#readme",
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^11.1.0",
     "@semantic-release/github": "^8.0.4",
