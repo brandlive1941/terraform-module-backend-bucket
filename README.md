@@ -1,5 +1,5 @@
 # terraform-module-backend-bucket
-terraform module for creating backend bucket for use in a gcp load balancer
+terraform module for creating backend bucket service for use in a gcp load balancer
 
 Module Input Variables
 ----------------------
