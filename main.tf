@@ -16,7 +16,7 @@ locals {
 resource "google_storage_bucket" "site" {
   name                        = var.name
   project                     = var.project_id
-  location                    = var.bucket_location
+  location                    = var.location
   uniform_bucket_level_access = var.uniform_bucket_level_access
   force_destroy               = true
   dynamic "website" {
