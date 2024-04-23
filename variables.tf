@@ -25,46 +25,10 @@ variable "website" {
   default     = false
 }
 
-variable "bucket_location" {
-  description = "local to a region, global, and replication"
-  type        = string
-  default     = "us"
-}
-
 variable "uniform_bucket_level_access" {
   description = "Toggles uniform bucket level access on"
   type        = bool
   default     = false
-}
-
-variable "cors_enabled" {
-  description = "Toggles CORS on"
-  type        = bool
-  default     = false
-}
-
-variable "cors_origins" {
-  description = "CORS origins"
-  type        = list(string)
-  default     = ["*"]
-}
-
-variable "cors_methods" {
-  description = "CORS methods"
-  type        = list(string)
-  default     = ["GET", "HEAD"]
-}
-
-variable "cors_response_headers" {
-  description = "CORS response headers"
-  type        = list(string)
-  default     = ["*"]
-}
-
-variable "cors_max_age_seconds" {
-  description = "CORS max age seconds"
-  type        = number
-  default     = 3600
 }
 
 variable "enable_cdn" {
@@ -89,6 +53,22 @@ variable "cdn_policy" {
     default_ttl = null
     max_ttl     = null
     min_ttl     = null
+  }
+}
+
+variable "cors_policy" {
+  description = "CORS Policy"
+  type = object({
+    max_age_seconds   = optional(number)
+    headers     = optional(list(string))
+    methods     = optional(list(string))
+    origins     = optional(list(string))
+  })
+  default = {
+    max_age_seconds = null
+    headers         = null
+    methods         = null
+    origins         = null
   }
 }
 
