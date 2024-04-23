@@ -27,12 +27,12 @@ resource "google_storage_bucket" "site" {
     }
   }
   dynamic "cors" {
-    for_each = var.cors_enabled ? [1] : []
+    for_each = var.cors_policy
     content {
-      origin          = var.cors_origins
-      method          = var.cors_methods
-      response_header = var.cors_response_headers
-      max_age_seconds = var.cors_max_age_seconds
+      origin          = var.cors_policy.origin
+      method          = var.cors_policy.method
+      response_header = var.cors_policy.response_header
+      max_age_seconds = var.cors_policy.max_age_seconds
     }
   }
 }
