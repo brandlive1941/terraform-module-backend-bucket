@@ -1,6 +1,6 @@
 output "name" {
   description = "ID of the created bucket"
-  value       = google_compute_backend_bucket.site.self_link
+  value       = google_compute_backend_bucket.site.id
 }
 
 output "backend" {
