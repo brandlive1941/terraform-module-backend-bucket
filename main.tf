@@ -1,17 +1,3 @@
-locals {
-  backend = {
-    enable_cdn = var.enable_cdn
-    cdn_policy = var.cdn_policy
-    log_config = var.log_config
-    groups = [
-      {
-        group = google_compute_backend_bucket.site.id
-      }
-    ]
-    iap_config = var.iap_config
-  }
-}
-
 # Bucket to store site
 resource "google_storage_bucket" "site" {
   name                        = var.name
