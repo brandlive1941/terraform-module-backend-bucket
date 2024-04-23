@@ -5,7 +5,7 @@ locals {
     log_config = var.log_config
     groups = [
       {
-        group = google_compute_backend_bucket.site.self_link
+        group = google_compute_backend_bucket.site.id
       }
     ]
     iap_config = var.iap_config
