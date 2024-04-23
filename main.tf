@@ -30,8 +30,8 @@ resource "google_storage_bucket" "site" {
     for_each = var.cors_policy
     content {
       origin          = lookup(cors.value, "origin", null)
-      method          = lookup(cors.value, "method", null)
-      response_header = lookup(cors.value, "response_header", null)
+      method          = lookup(cors.value, "methods", null)
+      response_header = lookup(cors.value, "response_headers", null)
       max_age_seconds = lookup(cors.value, "max_age_seconds", null)
     }
   }
