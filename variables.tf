@@ -28,7 +28,7 @@ variable "website" {
 variable "uniform_bucket_level_access" {
   description = "Toggles uniform bucket level access on"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "enable_cdn" {
@@ -57,19 +57,9 @@ variable "cdn_policy" {
 }
 
 variable "cors_policy" {
-  description = "CORS Policy"
-  type = object({
-    max_age_seconds   = optional(number)
-    headers     = optional(list(string))
-    methods     = optional(list(string))
-    origins     = optional(list(string))
-  })
-  default = {
-    max_age_seconds = null
-    headers         = null
-    methods         = null
-    origins         = null
-  }
+  description = "Set of maps of mixed type attributes for CORS values"
+  type        = set(any)
+  default     = []
 }
 
 variable "log_config" {

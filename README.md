@@ -10,6 +10,7 @@ Module Input Variables
 - `cloud_run_services` - cloud run services to region map
 - `enable_cdn` - enable/disable cdn
 - `cdn_policy` - cdn policy
+- `cors_policy` - cors policy
 - `iap_config` - iap config
 - `log_config` - log config
 
@@ -21,13 +22,14 @@ module "example-lb" {
   source          = "github.com/brandlive1941/terraform-module-backend-serverless?ref=v1.0.1"
 
   project_id = var.project_id
-  name = each.value["name"]
-  location = each.value["location"]
-  service_name = each.value["service_name"]
-  enable_cdn = each.value.backend["enable_cdn"]
-  cdn_policy = each.value.backend["cdn_policy"]
-  iap_config = each.value.backend["iap_config"]
-  log_config = each.value.backend["log_config"]
+  name = var.name
+  location = var.location
+  service_name = var.service_name
+  enable_cdn = var.enable_cdn
+  cdn_policy = var.cdn_policy
+  cors_policy = var.cors_polic
+  iap_config = var.iap_config
+  log_config = var.log_config
 }
 ```
 
