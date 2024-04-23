@@ -59,10 +59,10 @@ variable "cdn_policy" {
 variable "cors_policy" {
   description = "CORS Policy"
   type = object({
-    max_age_seconds   = optional(number)
-    headers     = optional(list(string))
-    methods     = optional(list(string))
-    origins     = optional(list(string))
+    max_age_seconds = optional(number)
+    headers         = optional(list(string))
+    methods         = optional(list(string))
+    origins         = optional(list(string))
   })
   default = {
     max_age_seconds = null
