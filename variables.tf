@@ -64,6 +64,12 @@ variable "cors_policy" {
     methods     = optional(list(string))
     origins     = optional(list(string))
   })
+  default = {
+    max_age_seconds = null
+    headers         = null
+    methods         = null
+    origins         = null
+  }
 }
 
 variable "log_config" {
