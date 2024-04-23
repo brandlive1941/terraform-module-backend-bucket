@@ -28,7 +28,7 @@ variable "website" {
 variable "uniform_bucket_level_access" {
   description = "Toggles uniform bucket level access on"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "enable_cdn" {
