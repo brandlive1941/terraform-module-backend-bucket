@@ -56,6 +56,22 @@ variable "cdn_policy" {
   }
 }
 
+variable "default_custom_error_response_policy" {
+  description = "Default custom error response policy"
+  type = object({
+    custom_error_responses = optional(list(object({
+      match_response_code    = optional(string)
+      path                   = optional(string)
+      override_response_code = optional(string)
+    })))
+    error_service = optional(string)
+  })
+  default = {
+    custom_error_responses = null
+    error_service          = null
+  }
+}
+
 variable "cors_policy" {
   description = "Set of maps of mixed type attributes for CORS values"
   type        = set(any)
