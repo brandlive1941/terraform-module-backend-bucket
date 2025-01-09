@@ -5,7 +5,6 @@ resource "google_storage_bucket" "site" {
   location                    = var.location
   uniform_bucket_level_access = var.uniform_bucket_level_access
   force_destroy               = true
-
   
   dynamic "website" {
     for_each = var.website ? [1] : []
