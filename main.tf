@@ -5,7 +5,6 @@ resource "google_storage_bucket" "site" {
   location                    = var.location
   uniform_bucket_level_access = var.uniform_bucket_level_access
   force_destroy               = true
-  
   dynamic "website" {
     for_each = var.website ? [1] : []
     content {
@@ -37,6 +36,6 @@ resource "google_compute_backend_bucket" "site" {
   project     = var.project_id
   description = "Backend service for ${var.name}"
   bucket_name = google_storage_bucket.site.name
-  custom_response_headers = ["Content-Security-Policy: default-src 'self' https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' 'https://greenroom-assets-${local.env}.greenroom-${local.env}.com' data:; font-src 'self'; connect-src 'self'; frame-src 'self';"]
+  custom_response_headers = ["Content-Security-Policy: default-src 'self' https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' 'https://greenroom-assets-${var.environment}.greenroom-${local.environment}.com' data:; font-src 'self'; connect-src 'self'; frame-src 'self';"]
   enable_cdn  = true
 }
