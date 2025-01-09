@@ -3,6 +3,11 @@ variable "project_id" {
   type        = string
 }
 
+variable "environment" {
+  description = "Environment"
+  type        = string
+}
+
 variable "name" {
   description = "Bucket name"
   type        = string
