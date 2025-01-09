@@ -106,10 +106,10 @@ variable "iap_config" {
 
 locals  {
     env_map = {
-      "greenroom-dev"      = "dev",
-      "greenroom-qa"       = "qa",
+      "greenroom-372217"      = "dev",
+      "greenroom-qa-435517"       = "qa",
       "greenroom-staging"  = "staging",
-      "greenroom-prod"     = "prod"
+      "greenroom-prod-389217"     = "prod"
     }
   env = lookup(local.env_map, var.project_id, "unknown")
 }
