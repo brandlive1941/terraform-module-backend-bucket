@@ -8,6 +8,12 @@ variable "environment" {
   type        = string
 }
 
+variable "custom_response_headers" {
+  description = "Custom response headers"
+  type        = list(string)
+  default = []
+}
+
 variable "name" {
   description = "Bucket name"
   type        = string
