@@ -11,7 +11,7 @@ variable "environment" {
 variable "custom_response_headers" {
   description = "Custom response headers"
   type        = list(string)
-  default = []
+  default     = []
 }
 
 variable "name" {
