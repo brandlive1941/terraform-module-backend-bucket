@@ -37,4 +37,5 @@ resource "google_compute_backend_bucket" "site" {
   description = "Backend service for ${var.name}"
   bucket_name = google_storage_bucket.site.name
   enable_cdn  = true
+  custom_response_headers = var.custom_response_headers
 }
