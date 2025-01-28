@@ -3,12 +3,6 @@ variable "project_id" {
   type        = string
 }
 
-variable "custom_response_headers" {
-  description = "Custom response headers"
-  type        = list(string)
-  default     = []
-}
-
 variable "name" {
   description = "Bucket name"
   type        = string
@@ -76,6 +70,12 @@ variable "default_custom_error_response_policy" {
     custom_error_responses = null
     error_service          = null
   }
+}
+
+variable "custom_response_headers" {
+  description = "Custom response headers"
+  type        = list(string)
+  default     = []
 }
 
 variable "cors_policy" {
