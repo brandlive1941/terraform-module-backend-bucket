@@ -8,8 +8,11 @@ Module Input Variables
 - `name` - identifier for the service
 - `location` - bucket location
 - `cloud_run_services` - cloud run services to region map
+- `uniform_bucket_level_access` - uniform bucket level access toggle
 - `enable_cdn` - enable/disable cdn
 - `cdn_policy` - cdn policy
+- `default_custom_error_response_policy` - default custom error response policy
+- `custom_error_responses` - custom error responses
 - `cors_policy` - cors policy
 - `iap_config` - iap config
 - `log_config` - log config
