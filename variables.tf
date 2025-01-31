@@ -72,6 +72,12 @@ variable "default_custom_error_response_policy" {
   }
 }
 
+variable "custom_response_headers" {
+  description = "Custom response headers"
+  type        = list(string)
+  default     = []
+}
+
 variable "cors_policy" {
   description = "Set of maps of mixed type attributes for CORS values"
   type        = set(any)

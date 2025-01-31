@@ -32,9 +32,10 @@ resource "google_storage_bucket_iam_member" "site" {
 
 # Add the bucket as a CDN backend
 resource "google_compute_backend_bucket" "site" {
-  name        = var.service_name
-  project     = var.project_id
-  description = "Backend service for ${var.name}"
-  bucket_name = google_storage_bucket.site.name
-  enable_cdn  = true
+  name                    = var.service_name
+  project                 = var.project_id
+  description             = "Backend service for ${var.name}"
+  bucket_name             = google_storage_bucket.site.name
+  enable_cdn              = true
+  custom_response_headers = var.custom_response_headers
 }
