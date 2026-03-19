@@ -36,6 +36,17 @@ resource "google_compute_backend_bucket" "site" {
   project                 = var.project_id
   description             = "Backend service for ${var.name}"
   bucket_name             = google_storage_bucket.site.name
-  enable_cdn              = true
+  enable_cdn              = var.enable_cdn
   custom_response_headers = var.custom_response_headers
+
+  dynamic "cdn_policy" {
+    for_each = var.cdn_policy != null ? [var.cdn_policy] : []
+    content {
+      cache_mode                   = cdn_policy.value.cache_mode
+      signed_url_cache_max_age_sec = cdn_policy.value.signed_url_cache_max_age_sec
+      client_ttl                   = cdn_policy.value.client_ttl
+      default_ttl                  = cdn_policy.value.default_ttl
+      max_ttl                      = cdn_policy.value.max_ttl
+    }
+  }
 }
